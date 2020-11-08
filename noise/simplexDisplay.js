@@ -14,24 +14,37 @@ function draw() {
       let index = (x + y * width) * 4;
       // let v = noise(xoff, yoff) * 255;
       let v = noiseSpace[x][y];
-      let c = map(v, -1, 1, 0, 255);
-      let r = c;
-      let g = c;
-      let b = c;
+      // let c = map(v, -1, 1, 0, 255);
+      // let r = c;
+      // let g = c;
+      // let b = c;
+      //
+      // pixels[index + 0] = r;
+      // pixels[index + 1] = g;
+      // pixels[index + 2] = b;
+      // pixels[index + 3] = 255;
 
-      if (v < -1) {
-        r = 127
-        g = 0
-        b = 0
-      } else if (v > 1) {
-        r = 0
-        g = 127
-        b = 127
+      let oceanFloor = color(0, 0, 0)
+      let oceanSurface = color(0, 0, 255)
+      let beach = color(255, 255, 0)
+      let forest = color(0, 255, 0)
+      let rock = color(128, 128, 128)
+      let snow = color(255, 255, 255)
+
+      if (v <= 0.42) {
+        c = lerpColor(oceanFloor, oceanSurface, map(v, -1, 0.42, 0, 1))
+      } else if (v > 0.42 && v <= 0.45) {
+        c = lerpColor(beach, forest, map(v, 0, 0.05, 0, 1))
+      } else if (v > 0.45 && v <= 0.75) {
+        c = lerpColor(forest, rock, map(v, 0.05, 0.75, 0, 1))
+      } else {
+        c = lerpColor(rock, snow, map(v, 0.75, 1, 0, 1))
       }
-      pixels[index + 0] = r;
-      pixels[index + 1] = g;
-      pixels[index + 2] = b;
-      pixels[index + 3] = 255;
+
+      pixels[index + 0] = red(c)
+      pixels[index + 1] = green(c)
+      pixels[index + 2] = blue(c)
+      pixels[index + 3] = 255
 
     }
 
