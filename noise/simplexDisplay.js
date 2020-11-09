@@ -7,7 +7,7 @@ function draw() {
   let xoff = 0
 
   loadPixels();
-  seed = 1
+  seed = random();
   let noiseSpace = noiseDetail2D(width, height, seed, 100, 4, 1 / 2, 2);
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
