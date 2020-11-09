@@ -33,7 +33,7 @@ function draw() {
       let snow = color(255, 255, 255)
 
       let oceanMax = 0.21
-      let beachMax = 0.45
+      let beachMax = 0.3
       let forestMax = 0.75
 
       if (v <= oceanMax) {
