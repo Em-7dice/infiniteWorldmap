@@ -28,7 +28,7 @@ function draw() {
       let oceanFloor = color(0, 46, 99)
       let oceanSurface = color(15, 152, 286)
       let beach = color(245, 222, 179)
-      let forest = color(80, 125, 42)
+      let forest = color(0, 158, 96)
       let rock = color(112, 128, 144)
       let snow = color(255, 255, 255)
 
