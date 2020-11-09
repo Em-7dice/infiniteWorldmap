@@ -37,13 +37,13 @@ function draw() {
       let forestMax = 0.75
 
       if (v <= oceanMax) {
-        c = lerpColor(oceanFloor, oceanSurface, map(v, -1, 0.21, 0, 1))
+        c = lerpColor(oceanFloor, oceanSurface, map(v, -1, oceanMax, 0, 1))
       } else if (v > oceanMax && v <= beachMax) {
-        c = lerpColor(beach, forest, map(v, 0.21, 0.05, 0, 1))
+        c = lerpColor(beach, forest, map(v, oceanMax, beachMax, 0, 1))
       } else if (v > beachMax && v <= forestMax) {
-        c = lerpColor(forest, rock, map(v, 0.05, 0.75, 0, 1))
+        c = lerpColor(forest, rock, map(v, beachMax, forestMax, 0, 1))
       } else {
-        c = lerpColor(rock, snow, map(v, 0.75, 1, 0, 1))
+        c = lerpColor(rock, snow, map(v, forestMax, 1, 0, 1))
       }
 
       pixels[index + 0] = red(c)
