@@ -18,7 +18,7 @@ function noiseDetail2D(width, height, seed, zoom, octaves, persistance, lacunari
         noiseX = (x / zoom * frequency) + (i * 2048);
         noiseY = (y / zoom * frequency) + (i * 2048);
 
-        noiseVal += (simplexNoise.noise2D(noiseX, noiseY)) * amplitude;
+        noiseVal += (simplexNoise.noise3D(noiseX, noiseY, seed)) * amplitude;
 
         amplitude *= persistance;
         frequency *= lacunarity;

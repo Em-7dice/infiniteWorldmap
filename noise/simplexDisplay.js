@@ -8,7 +8,7 @@ function draw() {
 
   loadPixels();
   pixelDensity(displayDensity());
-  let seed = random(); //seed 124 is nice. Has a smallish landmass near the origin.
+  let seed = random(); //seed 125 is nice. Origin is on land.
   let zoom = 10
   let noiseSpace = noiseDetail2D(width, height, seed, zoom * 25, zoom, (1 / 2), 2);
   //noiseDetail2D(width, height, seed, zoom, octaves, persistance, lacunarity)
