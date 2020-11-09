@@ -32,9 +32,9 @@ function draw() {
       let rock = color(128, 128, 128)
       let snow = color(255, 255, 255)
 
-      if (v <= 0.42) {
-        c = lerpColor(oceanFloor, oceanSurface, map(v, -1, 0.42, 0, 1))
-      } else if (v > 0.42 && v <= 0.45) {
+      if (v <= 0.21) {
+        c = lerpColor(oceanFloor, oceanSurface, map(v, -1, 0.21, 0, 1))
+      } else if (v > 0.21 && v <= 0.45) {
         c = lerpColor(beach, forest, map(v, 0, 0.05, 0, 1))
       } else if (v > 0.45 && v <= 0.75) {
         c = lerpColor(forest, rock, map(v, 0.05, 0.75, 0, 1))
