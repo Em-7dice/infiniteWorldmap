@@ -8,8 +8,11 @@ function draw() {
 
   loadPixels();
   pixelDensity(displayDensity());
-  seed = random();
-  let noiseSpace = noiseDetail2D(width, height, seed, 100, 4, 1 / 2, 2);
+  let seed = 124;
+  let zoom = 10
+  let noiseSpace = noiseDetail2D(width, height, seed, zoom * 25, zoom, (1 / 2), 2);
+  //noiseDetail2D(width, height, seed, zoom, octaves, persistance, lacunarity)
+
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
       let index = (x + y * width) * 4;

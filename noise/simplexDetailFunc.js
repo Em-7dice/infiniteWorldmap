@@ -1,10 +1,10 @@
-function noiseDetail2D(width, height, seed, scale, octaves, persistance, lacunarity) {
+function noiseDetail2D(width, height, seed, zoom, octaves, persistance, lacunarity) {
   simplexNoise = new SimplexNoise(seed);
   noiseMap = [
     []
   ];
-  if (scale <= 0) {
-    scale = 0.0001;
+  if (zoom <= 0) {
+    zoom = 0.0001;
   }
 
   for (x = 0; x < width; x++) {
@@ -15,8 +15,8 @@ function noiseDetail2D(width, height, seed, scale, octaves, persistance, lacunar
       noiseVal = 0;
 
       for (let i = 0; i < octaves; i++) {
-        noiseX = (x / scale * frequency) + (i * 2048);
-        noiseY = (y / scale * frequency) + (i * 2048);
+        noiseX = (x / zoom * frequency) + (i * 2048);
+        noiseY = (y / zoom * frequency) + (i * 2048);
 
         noiseVal += (simplexNoise.noise2D(noiseX, noiseY)) * amplitude;
 
