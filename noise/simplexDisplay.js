@@ -25,11 +25,11 @@ function draw() {
       // pixels[index + 2] = b;
       // pixels[index + 3] = 255;
 
-      let oceanFloor = color(0, 0, 0)
-      let oceanSurface = color(0, 0, 255)
-      let beach = color(255, 255, 0)
-      let forest = color(0, 255, 0)
-      let rock = color(128, 128, 128)
+      let oceanFloor = color(0, 46, 99)
+      let oceanSurface = color(15, 152, 286)
+      let beach = color(245, 222, 179)
+      let forest = color(80, 125, 42)
+      let rock = color(112, 128, 144)
       let snow = color(255, 255, 255)
 
       if (v <= 0.21) {
