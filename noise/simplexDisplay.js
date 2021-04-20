@@ -11,7 +11,7 @@ function draw() {
   let seed = random(); //seed 125 is nice. Origin is on land.
   let zoom = 10
   let noiseSpace = noiseDetail2D(width, height, seed, zoom * 25, zoom, (1 / 2), 2);
-  //noiseDetail2D(width, height, seed, zoom, octaves, persistance, lacunarity)
+  //               noiseDetail2D(width, height, seed, zoom, octaves, persistance, lacunarity)
 
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
